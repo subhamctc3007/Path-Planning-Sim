@@ -3,6 +3,7 @@ import random
 
 # custom modules
 from node import Node
+from algorithms.bfs import bfs
 
 WIDTH = 800
 ROWS = 40
@@ -49,7 +50,7 @@ def generate_random_grid():
     goal = random.choice(free_nodes)
     goal.make_goal()
 
-    return grid
+    return grid, start, goal
 
 def draw_grid_lines(win):
     # draws the grid lines on the existing white canvas
@@ -78,7 +79,7 @@ def create_canvas(win, grid):
     pygame.display.update()
 
 def main():
-    grid = generate_random_grid()
+    grid, start, goal = generate_random_grid()
 
     running = True
     while running:
@@ -89,7 +90,14 @@ def main():
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_r:
-                    grid = generate_random_grid()
+                    grid, start, goal = generate_random_grid()
+
+                if event.key == pygame.K_SPACE:
+                    for row in grid:
+                        for node in row:
+                            node.update_neighbors(grid)
+
+                    bfs(lambda: create_canvas(WIN, grid), start, goal)
 
     pygame.quit()
 

@@ -5,13 +5,13 @@ A Python and Pygame based visualization tool for learning and experimenting with
 - Grid-based environment
 - Random obstacle generation
 - Random start and goal generation
-- BFS visualization (coming soon)
-- A* visualization (planned)
+- BFS visualization
+- A* visualization (coming soon)
 - Dijkstra visualization (planned)
 - Interactive GUI (planned)
 
 ## Installation
-Clone the repository:
+First Fork the Repository and then clone it:
 ```bash
 git clone <repository_url>
 cd /path-planning-sim
@@ -44,14 +44,14 @@ python3 main.py
 |------|----------|
 | R | Generate a new random map |
 | SPACE | Run BFS |
-| A | Run A* |
-| D | Run Dijkstra |
+<!-- | A | Run A* |
+| D | Run Dijkstra | -->
 
 ## Project Roadmap
 - [x] Grid generation
 - [x] Random obstacle generation
 - [x] Random start and goal generation
-- [ ] BFS visualization
+- [x] BFS visualization
 - [ ] DFS visualization
 - [ ] Dijkstra visualization
 - [ ] A* visualization
@@ -61,6 +61,7 @@ python3 main.py
 
 ## Screenshot
 ![Random Grid](screenshots/sample_grid.png)
+![BFS Visualization](screenshots/bfs.png)
 
 ## License
 GNU General Public License V3.0
